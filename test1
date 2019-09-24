@@ -1,0 +1,59 @@
+Question 1
+
+Create a Deployment with following configuration, in the default namespace :-
+
+Deployment Name = nginx-deploy
+Replicas = 2
+number of containers per pod = 1
+Container Image = nginx:alpine
+Pod Label app set to value "web"
+Question 2
+
+Create a file with name 2.yaml to create a Namespace called production and put it inside inside results folder of your home directory.
+
+Application Lifecycle Management
+Question 3
+Create a Pod with name liveness-test in the default namespace and configure Liveness Probe like following :-
+You can use any container image to create the Pod
+Liveness Probe must be configured to use following custom command
+   cat /tmp/healthy
+The health-check should start after 20 secs of the container start
+The health-check should be getting checked in every 15 secs
+
+Question 4
+Create a Job object with name batch-ops, inside batch namespace, with following configuration
+Each job prints any text in the standard output
+
+We run overall 12 Jobs, in a group of 3
+
+Storage
+Question 5
+Create a file with name 5.yaml, using which we can create a PersistentVolume of size 2GB. The name of the PersistentVolume should be test-pv and 
+it should use hostPath volume driver.
+Put the 5.yaml, inside inside results folder of your home directory.
+
+Scheduling
+Question 6
+Create a namespace with name test-quota . Create a resource quota memquota for that namespace, set memory's, request and limit 
+resource constraints to 256 MB and 512 MB respectively.
+Services and Networking
+Question 7
+Create a service with name web-service inside default namespace. The service should of type NodePort, which is hardcoded to 32009. 
+The service should select all the Pods which have label app set to frontend.
+Security
+Question 8
+Create a file with name 8.yaml, which would define the networking as folloiwng :-
+Pods which have label app set to backend can only be access by Pods which have label app set to frontend.
+Put the 8.yaml, inside inside results folder of your home directory.
+
+ConfigMaps and Secrets
+Question 9
+Create a ConfigMap with name course-config inside default namespace, with following key-value pair.
+course_name: cka
+chapters: 10
+enable_quiz: True
+Logging-Monitoring
+Question 10
+Create a Pod with name logpod in default namespace with one container name c1 and configure it like following
+Container c1 mounts a volume with name voldb created using emptyDir driver at /var/log location
+Container c1 continuously writes the output date command, with interval of 2 seconds to the /var/log/applogs file
